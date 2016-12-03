@@ -98,8 +98,18 @@ bool DownloadManager::saveToDisk(const QString &filename, QIODevice *data)
 
 void DownloadManager::execute()
 {
-    QStringList args = QCoreApplication::instance()->arguments();
-    args.takeFirst();           // skip the first argument, which is the program's name
+    // QStringList args = QCoreApplication::instance()->arguments();
+    QStringList args = {"http://www.google.com.bd/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"};
+    
+    //https://www.google.com.bd/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png
+    
+    
+    
+    //args.takeFirst();           // skip the first argument, which is the program's name
+    args.first();
+    
+    
+    
     if (args.isEmpty()) {
         printf("Qt Download example - downloads all URLs in parallel\n"
                "Usage: download url1 [url2... urlN]\n"
